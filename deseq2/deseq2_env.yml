@@ -13,7 +13,8 @@ dependencies:
 - r-rcolorbrewer=1.1_3
 - r-ggplot2=3.5.2
 - r-pheatmap=1.0.13
-- r-msigdbr=25.1.1
+- r-msigdbr
+- bioconductor-msigdb
 - bioconductor-fgsea
 - bioconductor-tximport
 - bioconductor-biomaRt
