@@ -1,4 +1,4 @@
-name: deseq_env
+name: deseq2_env
 channels:
 - bioconda
 - conda-forge
