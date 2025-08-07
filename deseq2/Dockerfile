@@ -1,16 +1,17 @@
 FROM continuumio/miniconda3
 
-# Copy environment file into the container
+# Copy environment file
 COPY deseq2_env.yml /tmp/deseq2_env.yml
 
 # Create the environment
 RUN conda env create -f /tmp/deseq2_env.yml && conda clean -a -y
 
-# Install R packages inside the conda R
-RUN conda run -n deseq2_env Rscript -e "install.packages('msigdbdf', repos=c('https://igordot.r-universe.dev', 'https://cloud.r-project.org'))"
-
-# Set PATH (so that RUN and CMD use conda R)
+# Set path to use conda R
 ENV PATH /opt/conda/envs/deseq2_env/bin:$PATH
+ENV CONDA_DEFAULT_ENV=deseq2_env
+
+# Install msigdbdf properly inside the conda env
+RUN /bin/bash -c "source activate deseq2_env && Rscript -e \"install.packages('msigdbdf', repos='https://igordot.r-universe.dev')\""
 
 # Default command
-CMD ["R"]
+CMD [ "R" ]

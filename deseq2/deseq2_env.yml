@@ -19,3 +19,5 @@ dependencies:
 - bioconductor-tximport
 - bioconductor-biomaRt
 - bioconductor-tximeta
+- bioconductor-clusterProfiler
+- bioconductor-org.Hs.eg.db
