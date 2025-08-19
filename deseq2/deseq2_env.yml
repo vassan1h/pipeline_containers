@@ -22,3 +22,4 @@ dependencies:
 - bioconductor-clusterProfiler
 - bioconductor-org.Hs.eg.db
 - bioconductor-TxDb.Hsapiens.UCSC.hg19.knownGene
+- bioconductor-GSVA
